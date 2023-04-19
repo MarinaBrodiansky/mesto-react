@@ -1,0 +1,17 @@
+.header {
+    padding-top: 28px;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}
+
+@media (min-width: 880px) {
+    .header {
+        padding-top: 45px auto;
+        max-width: 880px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header {
+        padding: 45px 200px 0 200px;
+    }
+}
