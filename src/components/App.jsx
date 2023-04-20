@@ -1,4 +1,4 @@
-import Header from './Header.jsx';
+import Header from './Header';
 import Main from './Main';
 import '../index.css';
 import Footer from './Footer';
@@ -48,6 +48,7 @@ function App() {
       title={"Редактировать профиль"}
       isOpen={isEditProfilePopupOpen}
       onClose={closeAllPopups}
+      buttonText={"Сохранить"}
       >
         <input
           required=""
@@ -71,13 +72,6 @@ function App() {
           id="job-input"
         />
         <span className="popup__error" id="job-input-error" />
-        <button
-          type="submit"
-          className="popup__submit-button"
-          aria-label="кнопка сохранить"
-        >
-          Сохранить
-        </button>
       </PopupWithForm>
 
 
@@ -87,6 +81,7 @@ function App() {
       title={"Новое место"}
       isOpen={isAddPlacePopupOpen}
       onClose={closeAllPopups}
+      buttonText={"Сохранить"}
       >
         <input
           required=""
@@ -108,13 +103,6 @@ function App() {
           id="element-link"
         />
         <span className="popup__error" id="element-link-error" />
-        <button
-          type="submit"
-          className="popup__submit-button"
-          aria-label="кнопка сохранить"
-        >
-          Сохранить
-        </button>
       </PopupWithForm>
 
 
@@ -128,14 +116,8 @@ function App() {
       title={"Вы уверены?"}
       isOpen={false}
       onClose={closeAllPopups}
+      buttonText={"Да"}
       >
-        <button
-        type="submit"
-        className="popup__submit-button"
-        area-label="кнопка да"
-        >
-          Да
-        </button>
       </PopupWithForm>
 
 
@@ -145,6 +127,7 @@ function App() {
       title={"Обновить аватар"}
       isOpen={isEditAvatarPopupOpen}
       onClose={closeAllPopups}
+      buttonText={"Сохранить"}
       >
         <input
           required=""
@@ -155,13 +138,6 @@ function App() {
           id="avatar"
         />
         <span className="popup__error" id="avatar-error" />
-        <button
-          type="submit"
-          className="popup__submit-button"
-          aria-label="кнопка сохранить"
-        >
-          Сохранить
-        </button>
       </PopupWithForm>
 
     </div>
