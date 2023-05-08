@@ -21,11 +21,11 @@ class Api {
     }
 
 //отправляем данные о пльзователе на сервер    
-    editUserInfo(name, about) {
+    setUserInfo({ name, about }) {
         return fetch(`${this._url}/users/me`, {
           method: "PATCH",
           headers: this._headers,
-          body: JSON.stringify({name, about})
+          body: JSON.stringify({ name, about })
         })
         .then((res) => this._checkResponse(res))
       }
@@ -40,11 +40,11 @@ class Api {
     }
 
 //добавляем карточки
-    addCard(name, link) {
+    addCard({ name, link }) {
         return fetch(`${this._url}/cards`, {
             method: "POST",
             headers: this._headers,
-            body: JSON.stringify({name, link})
+            body: JSON.stringify({ name, link })
         })
         .then((res) => this._checkResponse(res))
     }
@@ -77,14 +77,22 @@ class Api {
     }
 
 //редактировать аватар
-    editAvatar(avatar) {
+    editAvatar({ avatar }) {
         return fetch(`${this._url}/users/me/avatar`, {
           method: "PATCH",
           headers: this._headers,
-          body: JSON.stringify({avatar})
+          body: JSON.stringify({ avatar })
         })
           .then(res => this._checkResponse(res))
       }
+
+    changeLikeCardStatus(cardId, isLiked) {
+        if(isLiked) {
+            return this.likeCard(cardId);
+        } else {
+            return this.unlikeCard(cardId)
+        }
+    }
 }
 
 const api = new Api ({
